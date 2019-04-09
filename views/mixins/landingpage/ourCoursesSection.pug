@@ -1,8 +1,8 @@
 mixin ourCoursesSection
   section#ourcourses.section-services.py-5
     .container.pt-5
-      h2.display-1.text-center.text-uppercase Our courses
-      h3.mb-5.text-center.text-muted We offer many interesting educational trainings
+      h2.display-1.text-center.text-uppercase Виды Работ
+      h3.mb-5.text-center.text-muted Наша Компания предоставляет следующие услуги
       
       .row.mx-5
         each course in courses
@@ -13,7 +13,8 @@ mixin ourCoursesSection
                   img.h-100(src="/images/"+course.icon, alt=course.title)
                 .service-content
                   h4.service-title= course.headline
-                  p=course.title
+                  a.text-muted.font-weight-bold='Подробнее...'
 
-      .section-button-wrap
-        a.btn.btn-lg.btn-gradient-secondary.mx-5(href='/courses/', role='button', aria-pressed='true') All Courses
+      // .section-button-wrap
+      //   a.btn.btn-lg.btn-gradient-secondary.mx-5(href='/courses/', role='button', aria-pressed='true') Весь Перечень
+

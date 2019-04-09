@@ -47,7 +47,19 @@
     background-position: 95% 0 !important;
   }
 }
-
+.btn-gradient-third {
+  color: white;
+  border: none;
+  background: linear-gradient(to left, $turquoise, $red) !important;
+  background-repeat: repeat;
+  background-size: 200% 100% !important;
+  transition: all 0.2s;
+  background-position: 5% 0 !important;
+  &:hover {
+    color: white;
+    background-position: 95% 0 !important;
+  }
+}
 code {
   color: $textOrange;
 }
@@ -951,4 +963,11 @@ input[type="week"] {
 }
 .mh-150 {
   max-height: 150px;
+}
+
+
+@media (min-width: 480px) {
+  .phone {
+    display: none;
+  }  
 }

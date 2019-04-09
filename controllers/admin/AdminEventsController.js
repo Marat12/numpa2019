@@ -5,10 +5,10 @@ const Location = require("../../models/location");
 const {fetchEventsByLocation} = require("../../helpers/helper");
 
 // to catch the error if 'EVENTBRIDE_API_KEY' path not exist in .env file
-if (!process.env.EVENTBRIDE_API_KEY) {
-  console.error("EVENTBRIDE_API_KEY MISSING");
-  process.exit();
-}
+// if (!process.env.EVENTBRIDE_API_KEY) {
+//   console.error("EVENTBRIDE_API_KEY MISSING");
+//   process.exit();
+// }
 
 module.exports.getEvents = async (req, res) => {
   const eventsByLocation = await fetchEventsByLocation()

@@ -3,37 +3,37 @@ mixin contactform
     .row
       .col-md-6.mb-3
         //label(for='name') Name
-        input#name.form-control(name="name" type='text', placeholder='Name', value='', required='')
+        input#name.form-control(name="name" type='text', placeholder='Имя', value='', required='')
         .invalid-feedback
           | Valid first name is required.
       .col-md-6.mb-3
         //label(for='email') Email
         span.text-muted
-        input#email.form-control(name="email" type='email', placeholder='your@example.com')
+        input#email.form-control(name="email" type='email', placeholder='ваша@почта.com')
         .invalid-feedback
-          | Please enter a valid email address for shipping updates.
+          | Прошу введите правильно email для ответа.
 
       .col-md-12
         //label(for='body') Message
-        textarea.mb-3#body.form-control(name="body" placeholder='Please, write your message here...', value='', required='')
+        textarea.mb-3#body.form-control(name="body" placeholder='Пожалуйста, пишите ваше сообщение здесь...', value='', required='')
         .invalid-feedback
-          | Valid last name is required.
+          | Необходимо заполнить данные.
 
         
-        select.mb-3.custom-select.text-muted(name="location")
-          option(selected="") Select your location here...
-          each location in locations
-            option(value=(location._id))=location.name
+        // select.mb-3.custom-select.text-muted(name="location")
+        //   option(selected="") Select your location here...
+        //   each location in locations
+        //     option(value=(location._id))=location.name
         
     
-        p.dataPrivacyLink
-          label.checkbox.TermsofService.text-muted
-            | I have read and agree to the
-            input(type='checkbox', name='TermsofService[]', value='I have read and agree to the', required='')
-            span.checkmark
-          a.ml-1(data-toggle='modal', data-target='#dataPrivacy')
-            | Data
-            | Privacy
-        if companytour
-          input(type="hidden" name='companytour' value=true)            
-        button#btn-contactForm.btn.btn-gradient-secondary.m-auto(type="submit") SEND   
+        // p.dataPrivacyLink
+        //   label.checkbox.TermsofService.text-muted
+        //     | I have read and agree to the
+        //     input(type='checkbox', name='TermsofService[]', value='I have read and agree to the', required='')
+        //     span.checkmark
+        //   a.ml-1(data-toggle='modal', data-target='#dataPrivacy')
+        //     | Data
+        //     | Privacy
+        // if companytour
+        //   input(type="hidden" name='companytour' value=true)            
+        button#btn-contactForm.btn.btn-gradient-secondary.m-auto(type="submit") Отправить   

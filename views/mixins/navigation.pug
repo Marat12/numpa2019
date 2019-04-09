@@ -1,40 +1,43 @@
 mixin navigation
 
- nav.sticky-top.navbar.navbar-expand-md.navbar-light.bg-white(class=currentPath == "/" ? "" : "")
+ nav.sticky-top.navbar.navbar-expand-md.navbar-light.bg-white(class=currentPath == "/" ? "" : "" )
   .container
     a.navbar-brand.d-flex.pt-0(href="/")
-      img(src='/media/dci.svg' alt='dci-logo' id='dci-logo')
+      img(src='/media/dci.svg' alt='НУМПА' id='dci-logo')
     button.navbar-toggler(type='button', data-toggle='collapse', data-target='#collapsingNavbar3')
       span.navbar-toggler-icon
     #collapsingNavbar3.navbar-collapse.collapse.w-100.mt-5.mt-md-0
       ul.nav.navbar-nav.ml-auto.w-100.justify-content-end#headernav
         li.position-relative.nav-item.dropdown
-          a#navbarDropdownMenuLink.nav-link.dropdown-toggle.z-1.mx-2(class= currentPath.includes('/courses') && !currentPath.includes('admin') ? "active" : "" data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-            | COURSES
+          a#navbarDropdownMenuLink.nav-link.dropdown-toggle.z-1.mx-2(class=currentPath == "/#ourcourses" ? "active" : "" href='/#ourcourses')
+            | &nbsp; ВИДЫ РАБОТ &nbsp;
           .dropdown-menu.shadow-sm.z-0(aria-labelledby='navbarDropdownMenuLink')
             each course in courses
               a.dropdown-item.nav-link.px-2(class= currentPath === ("/courses/" + course.slug) ? "active" : "" href='/courses/'+ course.slug)=course.headline
-        li.position-relative.nav-item.dropdown
-          a#navbarDropdownMenuLink.nav-link.dropdown-toggle.z-1.mx-2(class=currentPath.includes('/events') && !currentPath.includes('admin') ? "active" : "" href='/events' data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-            | EVENTS
+        li.position-relative.nav-item
+          a.nav-link.mx-2(class= currentPath === ("/events") ? "active" : "" href='/events')
+           | &nbsp; О КОМПАНИИ &nbsp;
 
-          .dropdown-menu.shadow-sm.z-0(aria-labelledby='navbarDropdownMenuLink')
-            a.dropdown-item.nav-link.px-2(class= currentPath === ("/events") ? "active" : "" href='/events') All events
+          // .dropdown-menu.shadow-sm.z-0(aria-labelledby='navbarDropdownMenuLink')
+          //   a.dropdown-item.nav-link.px-2(class= currentPath === ("/events") ? "active" : "" href='/events') All events
             each location in locations
               a.dropdown-item.nav-link.px-2(class= currentPath === ("/events/" + location.name) ? "active" : "" href='/events/'+ location.name)=location.name
         li.position-relative.nav-item
-          a.nav-link.mx-2(class=currentPath == "/stories" ? "active" : "" href='/stories') STORIES
+          a.nav-link.mx-2(class=currentPath == "/stories" ? "active" : "" href='/stories') &nbsp; ОТЗЫВЫ &nbsp;
         li.position-relative.nav-item
-          a.nav-link.mx-2(class=currentPath == "/tour" ? "active" : "" href='/tour') COMPANYTOUR
+          a.nav-link.mx-2(class=currentPath == "/tour" ? "active" : "" href='/tour') &nbsp; РЕКВИЗИТЫ &nbsp;
       
-        li.position-relative.nav-item.dropdown
-          a#navbarDropdownMenuLink.nav-link.dropdown-toggle.z-1.mx-2(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false' class= currentPath.includes('/pages') && !currentPath.includes('admin') ? "active" : ""  href='/admin/contacts')
-            | GET INVOLVED
-          .dropdown-menu.shadow-sm.z-0(aria-labelledby='navbarDropdownMenuLink')
-            each page in headerPages
-              a.dropdown-item.nav-link.px-2(class= currentPath === ("/pages/" + page.slug) ? "active" : "" href='/pages/'+ page.slug)=page.title
-            a.dropdown-item.px-2.nav-link(href='/jobs/') Jobs
+        // li.position-relative.nav-item.dropdown
+        //   a#navbarDropdownMenuLink.nav-link.dropdown-toggle.z-1.mx-2(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false' class= currentPath.includes('/pages') && !currentPath.includes('admin') ? "active" : ""  href='/admin/contacts')
+        //     | GET INVOLVED
+        //   .dropdown-menu.shadow-sm.z-0(aria-labelledby='navbarDropdownMenuLink')
+        //     each page in headerPages
+        //       a.dropdown-item.nav-link.px-2(class= currentPath === ("/pages/" + page.slug) ? "active" : "" href='/pages/'+ page.slug)=page.title
+        //     a.dropdown-item.px-2.nav-link(href='/jobs/') Jobs
               
 
         li.position-relative.nav-item
-          a.nav-link.mx-2(data-toggle='modal', data-target='#contactFormModal') CONTACT US
+          a.nav-link.mx-2(data-toggle='modal', data-target='#contactFormModal') <button style="background: transparent;border: none !important; color:grey; padding: 0px 0px;">&nbsp; НАПИШИТЕ НАМ &nbsp;</button>
+        
+        // li.position-relative.nav-item  
+        //   a.nav-link.mx-2(data-toggle='modal', data-target='#contactFormModal') &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

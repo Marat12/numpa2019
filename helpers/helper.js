@@ -109,8 +109,12 @@ exports.getRequestUrl = req => {
 exports.sendMail = async (req, mailOptions) => {
   return new Promise((resolve, reject) => {
     let transporter = nodemailer.createTransport({
+      service: 'gmail',
       host: process.env.MAILHOST,
       port: process.env.MAILPORT,
+      secure: true,
+      socketTimeout: 5000,
+      logger: true,      
       auth: {
         user: process.env.MAILUSER,
         pass: process.env.MAILPW
@@ -120,7 +124,7 @@ exports.sendMail = async (req, mailOptions) => {
     transporter.sendMail(mailOptions, async (error, info) => {
       if (error) {
         console.log(error, info);
-        req.flash("danger", `A error occured, please try it later again!`);
+        req.flash("danger", `Произошла ошибка, пожалуйста повторите позже!`);
         res.redirect(req.headers.referer);
         reject(error);
       }

@@ -1,32 +1,32 @@
 extends layout.pug
 block content
-  .jumbotron.jumbotron-fluid.jumbotron-singleCourse.text-center.bg-transparent
-    .bg-primary-transparent.position-fixed.left.top.z-minus.h-100.w-100
-      video.half-transparent.w-100(autoplay='', muted='', loop='')
-        source(src='/media/video.mp4', type='video/mp4')
+  // .jumbotron.jumbotron-fluid.jumbotron-singleCourse.text-center.bg-transparent
+  //   .bg-primary-transparent.position-fixed.left.top.z-minus.h-100.w-100
+  //     video.half-transparent.w-100(autoplay='', muted='', loop='')
+  //       source(src='/media/video.mp4', type='video/mp4')
 
-    .jumbotron-courses-container.text-white
-      h1.display-1.mt-5.mb-3.text-white Courses
-      p.lead.mb-3 Varios possibilities
+  //   .jumbotron-courses-container.text-white
+  //     h1.display-1.mt-5.mb-3.text-white Courses
+  //     p.lead.mb-3 Varios possibilities
     
 
   
-  .container
-    .bg-white.my-5.p-5.text-left
-      .row
-        h1.mb-3 Would you like to work with DCI?
-        p We offer on a roling basis different jobs in teaching and administration at DCI. Become part of an amazing team in one of German’s most interesting social impact companies.
-        .mt-5
-          .mb-3
-            h2 Our locations
-            ul.nav.nav-tabs.mb-3
-              a.nav-link(href="/jobs")="All"
-              each location in locations
-                li.nav-item
-                  a.nav-link(class=(query.location === location.name ? "active" : "") href="/jobs?location="+location.name)=location.name
-          if query.location
-            h2="Showing jobs for " + query.location
-          else
-            h2="Showing all jobs"
-          +joblist(true)
+  // .container
+  //   .bg-white.my-5.p-5.text-left
+  //     .row
+  //       h1.mb-3 Would you like to work with DCI?
+  //       p We offer on a roling basis different jobs in teaching and administration at DCI. Become part of an amazing team in one of German’s most interesting social impact companies.
+  //       .mt-5
+  //         .mb-3
+  //           h2 Our locations
+  //           ul.nav.nav-tabs.mb-3
+  //             a.nav-link(href="/jobs")="All"
+  //             each location in locations
+  //               li.nav-item
+  //                 a.nav-link(class=(query.location === location.name ? "active" : "") href="/jobs?location="+location.name)=location.name
+  //         if query.location
+  //           h2="Showing jobs for " + query.location
+  //         else
+  //           h2="Showing all jobs"
+  //         +joblist(true)
             

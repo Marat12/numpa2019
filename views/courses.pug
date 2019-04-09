@@ -1,28 +1,34 @@
 extends layout.pug
 block content
-  .jumbotron.jumbotron-fluid.jumbotron-singleCourse.text-center.bg-transparent
-    .bg-primary-transparent.position-fixed.left.top.z-minus.h-100.w-100
-      video.half-transparent.w-100(autoplay='', muted='', loop='')
-        source(src='/media/video.mp4', type='video/mp4')
-
-    .jumbotron-courses-container.text-white
-      h1.display-1.mt-5.mb-3.text-white Courses
-      p.lead.mb-3 Varios possibilities
+  // .jumbotron.jumbotron-fluid.jumbotron-singleCourse.text-center.bg-transparent
+  //   .bg-primary-transparent.position-fixed.left.top.z-minus.h-100
+  //     img.half-transparent.w-100.h-100.object-fit-cover(src='/media/bg2.jpg')
+  //   .jumbotron-courses-container.text-white
+  //     h1.display-1.mt-5.mb-3.text-white Отзывы
+  //     p.lead.mb-3 Нам приятно работать с каждым из Вас
     
-  section#services.h-100
-    .container.h-100
-      .bg-light.h-100
-        .row
-          each course in courses
-            .col-md-6.col-lg-4
-              .bg-light.hover-shadow
-                .service-item
-                  a.service-link(href="/courses/"+course.slug)
-                    span.sr-only
-                      = course.title
-                  .service-image.icon-image
-                    img.h-100(src="/images/"+course.icon, alt=course.title)
-                  .service-content
-                    h4.service-title= course.headline
-                    p=course.title
+  // section#services.h-100
+  //   .container.h-100
+  //     .bg-light.h-100
+  //       .row
+  //         each course in courses
+  //           .col-md-6.col-lg-4
+  //             .bg-light.hover-shadow
+  //               .service-item
+  //                 a.card-link(href="/courses/"+course.slug)
+  //                   span.sr-only
+  //                     = course.title
+  //                 .service-image.icon-image
+  //                   img.h-100(src="/images/"+course.icon, alt=course.title)
+  //                 .service-content
+  //                   h4.service-title= course.headline
+  //         //           p=course.title
         
+  // .container.py-3.bg-white
+  //   .row
+  //     .col
+  //       .row
+  //         each course in courses
+  //           li.col-md-6.col-sm-12.col-lg-4.d-flex.mb-4
+  //             .hover-shadow.bg-light.w-100
+  //               +singleCourse

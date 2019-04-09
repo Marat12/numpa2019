@@ -76,13 +76,13 @@ app.use(function(req, res, next) {
       .replace(/\-$/g, "")
       .toLowerCase());
   let match = req.url.match("[^/]+(?=/$|$)");
-  res.locals.title = "DigitalCareerInstitute";
+  res.locals.title = "ООО НУМПА";
   app.locals.moment = require("moment");
-  res.locals.live = req.headers.host.includes("digitalcareerinstitute.org");
+  res.locals.live = req.headers.host.includes("numpa.in.ua");
   if (match) {
     match = match[0].replace(/\//g, " ");
     res.locals.title =
-      res.locals.title + " | " + match.charAt(0).toUpperCase() + match.slice(1);
+      res.locals.title;
   }
   console.log(req.method, req.headers.host + req.url);
   next();

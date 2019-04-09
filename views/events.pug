@@ -2,17 +2,14 @@ extends layout.pug
 block content
   .jumbotron.jumbotron-fluid.jumbotron-singleCourse.text-center.bg-transparent
     .bg-primary-transparent.position-fixed.left.top.z-minus.h-100
-      img.half-transparent.w-100.h-100.object-fit-cover(src='/media/bg3.jpg')
+      img.half-transparent.w-100.h-100.object-fit-cover(src='/media/bg2.jpg')
     .jumbotron-courses-container.text-white
-      h1.display-1.mt-5.mb-3.text-white All events in our locations
-      p.lead.mb-3 Hackthons, Infoevents and Jobfairs
+      h1.display-1.mt-5.mb-3.text-white Коротко о Нас
+ 
 
-  .container.bg-light
-      .row.py-3
-        each location in eventsByLocation
-          .col-md-6
-            h2=location.name
-            each event in location.events
-              +singleEvent(event)
-
-
+  .container.py-3.bg-white
+    .row
+      .col
+        .row
+        div.my-5
+          p.lead ООО "НУМПА" - это успешная и серьезная компания, ктороая С 1990 года занимается бурением скважин, решает комплексные вопросы водоснабжения населения города Николаева и области. Проводит гидрогеологические исследования и инженерно-геологические изыскания. Осуществляет поставку насоного оборудования и ситем очистки воды. Изготавливает и устанавливает водонапорные башни. Выполняет весь комплекс работ связаных с водообеспечением предприятий, зон отдыха и населённых пунктов.

@@ -2,21 +2,23 @@ extends layout.pug
 block content
   .jumbotron.jumbotron-fluid.jumbotron-singleCourse.text-center.bg-transparent
     .bg-primary-transparent.position-fixed.left.top.z-minus.h-100
-      img.half-transparent.w-100.h-100.object-fit-cover(src='/media/bg1.jpg')
+      img.half-transparent.w-100.h-100.object-fit-cover(src='/media/bg2.jpg')
     .jumbotron-courses-container.text-white
-      h1.display-1.mt-5.mb-3.text-white Company Tours
-      p.lead.mb-3 Lets us visit your office.
-  .container
-    .bg-light
-      .py-5
-        .px-md-5.py-5    
-          .px-md-5
-            .px-md-5
-              .px-lg-5.pb-lg-5.text-center
-                h3.mb-5.text-muted We organize tours with our students on a regular basis. Every Wednesday we perform a trip through the digital-sector and visit some of the tech startups to give our students a feeling what it means to be  a developer. Are you or your company interested in hosting on of this events? Write us a message!
-                h4 We offer company tours in the following locations: 
-                  .mb-3
-                  each location in locations
-                    span.badge.badge-primary.mr-3.mb-3=location.name
-              h2.text-center Get in touch!
-              +contactform
+      h1.display-1.mt-5.mb-3.text-white Наши Реквизиты
+ 
+
+  .container.py-3.bg-white
+    .row
+      .col
+        .row
+        div.my-5
+          p.lead <strong>Адреса юридична:</strong> 57284, Миколаївська обл.., Вітовський район, село Лимани, вул. Фрунзе,130
+          p.lead <strong>Місцезнаходження:</strong> 54051, м. Миколаїв, проспект Богоявленський, 340/5
+          p.lead <strong>ІПН</strong> 192855514204, <strong>свідоцтво ПДВ</strong> 100115826
+          p.lead <strong>Телефон/факс:</strong> (0512) 64-14-84, 64-13-84
+          p.lead <strong>Адреса поштова:</strong> 54051, м. Миколаїв, а/с 100
+          p.lead <strong>Код ЄДРПОУ 19285554</strong>
+          p.lead <strong>Р/р 26002039848702</strong> в ПАТ УкрСиббанк, м. Київ, МФО 351005
+          p.lead <strong>Електрона адреса:</strong> numpa@ukr.net
+          p.lead <strong>Директор</strong> – Валієв Рашит Равільович
+          p.lead <strong>Гол.бухгалтер</strong> – Дронь Жанна Андріївна

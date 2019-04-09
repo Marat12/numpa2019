@@ -1,13 +1,13 @@
 mixin singleEvent(event)
-  a.card.single-event-card.border-0.mb-4.hover-shadow(href=event.url, target="_blank")
-    img.card-img-top(src=event.imageurl)
-    .card-body.p-3
-      .card-date.mr-2
-        p.card-date-month.mb-0.mt-1=moment(event.start).format('MMM')
-        p.card-date-day.text-center=moment(event.start).format('DD')
-      .card-text
-        p.event-name.mb-0= event.name
-        p.event-date.mb-0=moment(event.start).format('MMMM Do YYYY, h:mm a')
-        span.event-location=event.location.street
-        span.event-location.ml-1=event.location.name
+  // a.card.single-event-card.border-0.mb-4.hover-shadow(href=event.url, target="_blank")
+  //   img.card-img-top(src=event.imageurl)
+  //   .card-body.p-3
+  //     .card-date.mr-2
+  //       p.card-date-month.mb-0.mt-1=moment(event.start).format('MMM')
+  //       p.card-date-day.text-center=moment(event.start).format('DD')
+  //     .card-text
+  //       p.event-name.mb-0= event.name
+  //       p.event-date.mb-0=moment(event.start).format('MMMM Do YYYY, h:mm a')
+  //       span.event-location=event.location.street
+  //       span.event-location.ml-1=event.location.name
           

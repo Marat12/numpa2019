@@ -6,7 +6,7 @@ mixin singleCourse
       .jumbotron-courses-container.text-white
         h1.display-1.mt-5.mb-3.text-white=course.headline
         p.lead.mb-5=course.subheading
-        button.btn.btn-lg.btn-gradient-primary.mt-3.mb-5(type='button' data-toggle='modal', data-target='#contactFormModal') Apply
+        button.btn.btn-lg.btn-gradient-primary.mt-3.mb-5(type='button' data-toggle='modal', data-target='#contactFormModal') Отправить Заявку
 
     .container.container-fluid-courses.bg-white.position-relative
       .row.row-courses
@@ -14,14 +14,14 @@ mixin singleCourse
           ul.nav.nav-pills.flex-column.nav-courses-pills.p-4.text-center.bg-light
             h4=course.headline
             li.nav-item
-              a.nav-link.nav-link-spy.mb-2.active(href='#section1') Overview
+              a.nav-link.nav-link-spy.mb-2.active(href='#section1') Описание
             li.nav-item
-              a.nav-link.nav-link-spy.mb-2(href='#section2') What you will learn
+              a.nav-link.nav-link-spy.mb-2(href='#section2') Наши преимущества
+            // li.nav-item
+            //   a.nav-link.nav-link-spy.mb-2(href='#section3') Day at DCI
             li.nav-item
-              a.nav-link.nav-link-spy.mb-2(href='#section3') Day at DCI
-            li.nav-item
-              a.nav-link.nav-link-spy.mb-2(href='#section4') How to Apply
-            button.btn.btn-gradient-primary.btn-spy(type='button' data-toggle='modal', data-target='#contactFormModal') Apply Now
+              a.nav-link.nav-link-spy.mb-2(href='#section4') Что необходимо от Вас
+            button.btn.btn-gradient-primary.btn-spy(type='button' data-toggle='modal', data-target='#contactFormModal') Отправить Заявку
 
         .col-sm-9.col-8.col-courses
           #section1.mb-5
@@ -37,70 +37,72 @@ mixin singleCourse
           #section2.my-5
             - 
             each object in course.features
-              .row.container            
-                .col-12.d.flex.m-auto
-                  img.img-fluid.float-left.mr-3.icons(src="/images/"+object.icon, alt=object.title)
+
                   h3.text-left=object.title
                   p.text-left.lead=object.subtitle
                   
-          section.my-5
-            h2 Want more details about our Web Development Course?
-            p.lead We will send you the full course information to your email
+          // section.my-5
+          //   h2 Want more details about our Web Development Course?
+          //   p.lead We will send you the full course information to your email
             
-          #section3.my-5.day-at-dci
-            h2.mb-5 A day at DCI
-            -
-            each object in course.timeline
-              .row.container.timelineRow            
-                .col-12.d.flex.m-auto
-                  div.timelineDiv.float-left.text-center
-                    span.timeline=object.time
-                  div.ml-5
-                    h3.ml-5.pt-2.text-left=object.title 
-                    p.ml-5.text-left=object.subtitle
+          // #section3.my-5.day-at-dci
+          //   h2.mb-5 A day at DCI
+          //   -
+          //   each object in course.timeline
+          //     .row.container.timelineRow            
+          //       .col-12.d.flex.m-auto
+          //         div.timelineDiv.float-left.text-center
+          //           span.timeline=object.time
+          //         div.ml-5
+          //           h3.ml-5.pt-2.text-left=object.title 
+          //           p.ml-5.text-left=object.subtitle
                       
           section.my-5
             div.my-5
-              h2 More than just classwork
-              p.lead Beyond building the hard skills in class, you need to get involved in the local tech scene and market yourself. We’re here to help you succeed with career development support and opportunities to get into the community.
+              h2 Почему Вам Стоит Работать с Нами
+              p.lead Большой опыт работы (с 1990 года). 
+              p.lead Высококвалифицированные сотрудники.
+              p.lead Индивидуальный подход к решению задач клиента. 
+              p.lead Собственная техническая база. 
+              p.lead Гибкое ценообразование.
               
-            div.my-5
-              h2 Career workshops
-              p.lead preparing an industry-specific resume to creating an online presence, you’ll pick up the skills to stand out.
+            // div.my-5
+            //   h2 Career workshops
+            //   p.lead preparing an industry-specific resume to creating an online presence, you’ll pick up the skills to stand out.
             
-            div.my-5
-              h2 Guest speakers
-              p.lead additional specialised sessions from top professionals and get tips from DCI alumni.
+            // div.my-5
+            //   h2 Guest speakers
+            //   p.lead additional specialised sessions from top professionals and get tips from DCI alumni.
             
-            div.my-5
-              h2 Company Tours
-              p.lead Take a tour of a local startup and see what the work environment is all about.
+            // div.my-5
+            //   h2 Company Tours
+            //   p.lead Take a tour of a local startup and see what the work environment is all about.
           
           #section4.my-5.courseSection
             .container
               .row
                 .col-lg-8.col-lg-offset-3                
-                  h2.how-to-apply How To Apply
+                  h2.how-to-apply Что необходимо от Вас
                   .courseApply
                     .courseApply-step
                       span.courseApply-stepCount 1
-                      p.courseApply-stepTitle Complete the application form
+                      p.courseApply-stepTitle Отправьте Заявку через сайт или наберите Нас
                     .courseApply-step
                       span.courseApply-stepCount 2
-                      p.courseApply-stepTitle Visit DCI and chat with our admissions team
+                      p.courseApply-stepTitle После получения консультации и устной договоренности, мы встречаемся у нас в офисе
                     .courseApply-step
                       span.courseApply-stepCount 3
-                      p.courseApply-stepTitle Reserve your spot
+                      p.courseApply-stepTitle Вы получаете качественный результат в кротчайшие сроки
 
-                  button.btn.btn-lg.btn-gradient-primary.mt-3.mb-5(type='button' data-toggle='modal', data-target='#contactFormModal') Apply
+                  button.btn.btn-lg.btn-gradient-primary.mt-3.mb-5(type='button' data-toggle='modal', data-target='#contactFormModal') Отправить Заявку
             section.my-5
-              h3 This course is available in: 
-                each location in course.locations
-                  span.mr-2=location.name
-              h2 Come see our campus!
-              p.lead Have questions? Want to see the student life for yourself? Book a one-on-one visit with our admissions team and we’ll show you around.
-              p Vulkanstraße 1
-              p 10367 Berlin
+              // h3 This course is available in: 
+              //   each location in course.locations
+              //     span.mr-2=location.name
+              // h2 Come see our campus!
+              // p.lead Have questions? Want to see the student life for yourself? Book a one-on-one visit with our admissions team and we’ll show you around.
+              p Наш офис расположен по адресу: пр. Октябрьский 340/5 (пр. Богоявленский 340/5)
+              p 54051 Николаев
       if user && user.admin === "true"
         div.py-3
           a.btn.btn-outline-primary(target="_blank" href='/admin/courses/edit/'+course.slug) Edit course

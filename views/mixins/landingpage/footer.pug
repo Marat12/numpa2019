@@ -7,34 +7,34 @@ mixin footer
         .row
           .col-xs-12.col-sm-6.col-md-4.footers-one
             .footers-logo
-              p.font-weight-bold DCI Digital Career Institute
+              p.font-weight-bold ООО НУМПА
             .footers-info.mt-3
               p
-                | The Digital Career Institute was born as an initiative to integrate refugees into digital jobs. Today it is
-                | committed to train anyone who wants to pursue a tech career.
+                | Адрес: 54051, г.Николаев, Корабельный р-н, проспект Богоявленський, 340/5 (Октябрьский, 340/5) 
+                | Телефон/факс: (0512) 64-14-84, 64-13-84 Почта: numpa@ukr.net
             .social-icons.mb-5
-              a.mr-2(href='https://medium.com/devugees')
+              a.mr-2(href='')
                 i#social-em.fab.fa-medium.fa-2x
-              a.mr-2(href='https://www.facebook.com/devugees')
+              a.mr-2(href='')
                 i#social-fb.fab.fa-facebook.fa-2x.social
-              a.mr-2(href='https://twitter.com/DevugeesOrg')
+              a.mr-2(href='')
                 i#social-tw.fab.fa-twitter-square.fa-2x
-              a(href='https://www.youtube.com/channel/UCSM_3ldxjcclGTcXaJRBYTw')
+              a(href='')
                 i#social-gp.fab.fa-youtube-square.fa-2x
 
-          .col-xs-12.col-sm-6.col-md-2.footers-two
-            p.font-weight-bold Company 
-            ul.list-unstyled
-              each page in footerPages
-                li
-                  a(href='/pages/'+ page.slug)
-                    =page.title
-                  if user && user.admin === "true"
-                    a(href='/admin/pages/edit/'+ page.slug)
-                      small.text-monospace= " (Edit)"
+          // .col-xs-12.col-sm-6.col-md-2.footers-two
+          //   p.font-weight-bold Company 
+          //   ul.list-unstyled
+          //     each page in footerPages
+          //       li
+          //         a(href='/pages/'+ page.slug)
+          //           =page.title
+          //         if user && user.admin === "true"
+          //           a(href='/admin/pages/edit/'+ page.slug)
+          //             small.text-monospace= " (Edit)"
                     
           .col-xs-12.col-sm-6.col-md-2.footers-three
-            p.font-weight-bold Courses 
+            p.font-weight-bold Виды работ
             ul.list-unstyled
               each course in courses
                 li
@@ -43,16 +43,16 @@ mixin footer
                     a(href='/admin/courses/edit/'+ course.slug)
                       small.text-monospace= " (Edit)"
           .col-xs-12.col-sm-6.col-md-2.footers-four
-            p.font-weight-bold Community 
+            p.font-weight-bold Коммуникация 
             ul.list-unstyled
               li
-                a(data-toggle='modal', href='#' data-target='#contactFormModal') Contact
+                a(data-toggle='modal', href='#' data-target='#contactFormModal') Напишите Нам
           
-          .col-xs-12.col-sm-6.col-md-2.footers-five
-            p.font-weight-bold Events 
+          .col-xs-12.col-sm-6.col-md-4.footers-five
+            p.font-weight-bold Регионы деятельности
             ul.list-unstyled
               li
-                a(href='/events') All Events
+                // a(href='/events') Регионы деятельности
               each location in locations
                 li
-                  a(href='/events/'+ location.name)=location.name
+                  a(href='')=location.name

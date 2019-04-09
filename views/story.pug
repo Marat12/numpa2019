@@ -13,7 +13,7 @@ block content
       .mt-4
         p.text-justify=story.content
       
-      a(href='/stories') +Back
+      a(href='/stories') Назад
       if user && user.admin === "true"
         div.mt-3
           a.btn.btn-outline-info(href='/admin/stories/edit/'+story.slug) Edit story

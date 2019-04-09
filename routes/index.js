@@ -67,16 +67,16 @@ router.post("/contact", async (req, res, next) => {
   contact.save(async function (err) {
     if (err) res.send(err);
     const mailOptions = {
-      from: 'mailer@digitalcareerinstitute.org',
+      from: 'mgidro16@gmail.com',
       to: req.body.companytour ? process.env.TOURMAILRECEIVER : process.env.MAILRECEIVER,
       subject: req.body.companytour ? `Company Tour request from website` : `Message on website`,
       text: `${req.body.body}`,
-      html: `${req.body.body}`
+      html: `Имя: ${req.body.name}, Почта клиента: ${req.body.email}, Текст сообщения: ${req.body.body}`
     }
     const info = await sendMail(req, mailOptions);
     req.flash(
       "success",
-      `Thanks for your message. We will reply to you as soon as possible.`
+      `Спасибо за Ваше сообщение. Мы Вам очень скоро ответим.`
     );
     console.log("Message sent: %s", info.messageId);
     res.redirect(req.headers.referer);
