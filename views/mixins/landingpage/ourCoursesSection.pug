@@ -13,7 +13,7 @@ mixin ourCoursesSection
                   img.h-100(src="/images/"+course.icon, alt=course.title)
                 .service-content
                   h4.service-title= course.headline
-                  a.text-muted.font-weight-bold='Подробнее...'
+                  a.text-muted.font-weight-bold(href="/courses/"+course.slug) Подробнее...
 
       // .section-button-wrap
       //   a.btn.btn-lg.btn-gradient-secondary.mx-5(href='/courses/', role='button', aria-pressed='true') Весь Перечень

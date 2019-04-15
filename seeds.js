@@ -6,7 +6,7 @@ const fs = require("fs");
 const request = require('request');
 
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGOURL, { useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect(process.env.MONGOURL, { useNewUrlParser: true, useCreateIndex: true, reconnectTries: Number.MAX_VALUE, reconnectInterval: 1000 });
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 
 const Story = require("./models/story");

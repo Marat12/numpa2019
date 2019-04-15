@@ -80,7 +80,7 @@ passport.deserializeUser((id, done) => {
 });
 
 exports.mongopath =
-  process.env.MONGOURL || "mongodb://localhost:27017/marketing-website";
+  process.env.MONGOURL || "mongodb://Marat1985:1234Mr1985@ds229909.mlab.com:29909/numpa";
 
 exports.getAsyncRedis = () => {
   try {

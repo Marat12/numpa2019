@@ -1,5 +1,6 @@
 const { mongopath, getAsyncRedis } = require("./helpers/helper");
 const express = require("express");
+const compression = require("compression");
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -54,6 +55,7 @@ app.use(
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
+app.use(compression());
 app.use(express.static("public"));
 app.use("/assets", express.static(path.join(__dirname, "node_modules/")));
 app.use("/assets", express.static(path.join(__dirname, "assets/css/")));
