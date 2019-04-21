@@ -1,6 +1,9 @@
 const { mongopath, getAsyncRedis } = require("./helpers/helper");
 const express = require("express");
 const compression = require("compression");
+const fs = require('fs');
+const http = require('http');
+const https = require('https');
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -62,6 +65,7 @@ app.use("/assets", express.static(path.join(__dirname, "assets/css/")));
 app.use("/assets", express.static(path.join(__dirname, "assets/icons/")));
 app.use("/media", express.static(path.join(__dirname, "assets/media/")));
 app.use("/images", express.static(path.join(__dirname, "uploads/images")));
+app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 
 app.use(expressValidator());
 app.use(flash());
@@ -80,7 +84,7 @@ app.use(function(req, res, next) {
   let match = req.url.match("[^/]+(?=/$|$)");
   res.locals.title = "ООО НУМПА";
   app.locals.moment = require("moment");
-  res.locals.live = req.headers.host.includes("numpa.in.ua");
+  res.locals.live = req.headers.host.includes("numpa.com.ua");
   if (match) {
     match = match[0].replace(/\//g, " ");
     res.locals.title =
@@ -217,5 +221,17 @@ if (process.env.CRONINTERVAL) {
 } else {
   console.log(`No cron interval set in the .env. No cron started.`);
 }
+
+http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://numpa.com.ua"  + req.url });
+    res.end();
+}).listen(80);
+
+https.createServer({
+  key: fs.readFileSync('/etc/letsencrypt/live/numpa.com.ua/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/numpa.com.ua/fullchain.pem')
+}, app).listen(443, () => {
+  console.log('Listening...')
+})
 
 module.exports = app;
